@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 22
           cache: yarn
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --frozen-lockfile --ignore-engines
       - run: yarn build
       - run: LANG=en_US TZ=America/Los_Angeles yarn test
       - run: LANG=en_KI TZ=Pacific/Kiritimati yarn test

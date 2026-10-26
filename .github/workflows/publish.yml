@@ -27,7 +27,7 @@ jobs:
             echo "Tag $GITHUB_REF_NAME does not match package.json $version"
             exit 1
           fi
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --frozen-lockfile --ignore-engines
       - run: yarn build
       - run: LANG=en_US TZ=America/Los_Angeles yarn test
       - run: LANG=en_KI TZ=Pacific/Kiritimati yarn test
