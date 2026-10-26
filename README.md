@@ -1,5 +1,12 @@
 # rrule.js
 
+> **LeeLabs fork**, published to GitHub Packages as `@leelabsllc/rrule` and used by
+> calendar-core and calendar-ui. It is [epodgaysky/rrule](https://github.com/epodgaysky/rrule):
+> upstream 2.8.0 plus an iteration shortcut in `src/iter/optimiseOptions.ts`.
+>
+> To release, bump `version` in `package.json`, merge to `master`, then push the tag
+> `v<version>`. `.github/workflows/publish.yml` builds, tests and publishes it.
+
 **Library for working with recurrence rules for calendar dates.**
 
 [![NPM version][npm-image]][npm-url]
