@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+      - run: yarn install --frozen-lockfile --ignore-engines
+      - run: yarn build
+      - run: LANG=en_US TZ=America/Los_Angeles yarn test
+      - run: LANG=en_KI TZ=Pacific/Kiritimati yarn test
